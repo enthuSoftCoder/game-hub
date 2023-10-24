@@ -1,4 +1,4 @@
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../hooks/usePlatforms";
 import {
   FaWindows,
   FaPlaystation,
@@ -30,7 +30,11 @@ const PlatformIconList = ({ platforms }: Props) => {
   return (
     <HStack marginY={1}>
       {platforms.map((platform) => (
-        <Icon color="gray.500" as={platformIcons[platform.slug]} />
+        <Icon
+          key={platform.id}
+          color="gray.500"
+          as={platformIcons[platform.slug]}
+        />
       ))}
     </HStack>
   );

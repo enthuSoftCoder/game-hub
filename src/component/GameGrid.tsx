@@ -15,11 +15,12 @@ const GameGrid = () => {
         padding="10px"
         spacing="10px"
       >
-        {skeletons.map((skeleton) => (
-          <GameCardContainer key={skeleton}>
-            <GameCardSkeleton />
-          </GameCardContainer>
-        ))}
+        {isLoading &&
+          skeletons.map((skeleton) => (
+            <GameCardContainer key={skeleton}>
+              <GameCardSkeleton />
+            </GameCardContainer>
+          ))}
         {games.map((game) => (
           <GameCardContainer>
             <GameCard game={game} />
